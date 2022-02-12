@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B09CCD7227B7BD0600F278AE /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7127B7BD0600F278AE /* DisplayView.swift */; };
+		B09CCD7727B7C1C700F278AE /* Museo 700.otf in Resources */ = {isa = PBXBuildFile; fileRef = B09CCD7627B7C1C700F278AE /* Museo 700.otf */; };
+		B09CCD7927B7C64000F278AE /* ButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7827B7C64000F278AE /* ButtonEnum.swift */; };
+		B09CCD7B27B7C94100F278AE /* digitalnumbers-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B09CCD7A27B7C94000F278AE /* digitalnumbers-regular.ttf */; };
+		B09CCD7E27B7CC6300F278AE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7D27B7CC6300F278AE /* ButtonView.swift */; };
+		B09CCD8127B7CE7200F278AE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B09CCD8027B7CE7200F278AE /* Montserrat-Bold.ttf */; };
 		B0CC05D727B65FA800682921 /* CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC05D627B65FA800682921 /* CalculatorApp.swift */; };
 		B0CC05D927B65FA800682921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC05D827B65FA800682921 /* ContentView.swift */; };
 		B0CC05DB27B65FA800682921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CC05DA27B65FA800682921 /* Assets.xcassets */; };
@@ -14,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B09CCD7127B7BD0600F278AE /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		B09CCD7527B7C04F00F278AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B09CCD7627B7C1C700F278AE /* Museo 700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo 700.otf"; sourceTree = "<group>"; };
+		B09CCD7827B7C64000F278AE /* ButtonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEnum.swift; sourceTree = "<group>"; };
+		B09CCD7A27B7C94000F278AE /* digitalnumbers-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digitalnumbers-regular.ttf"; sourceTree = "<group>"; };
+		B09CCD7D27B7CC6300F278AE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		B09CCD8027B7CE7200F278AE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		B0CC05D327B65FA800682921 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CC05D627B65FA800682921 /* CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorApp.swift; sourceTree = "<group>"; };
 		B0CC05D827B65FA800682921 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +46,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B09CCD7C27B7C94500F278AE /* FontPackages */ = {
+			isa = PBXGroup;
+			children = (
+				B09CCD7627B7C1C700F278AE /* Museo 700.otf */,
+				B09CCD8027B7CE7200F278AE /* Montserrat-Bold.ttf */,
+				B09CCD7A27B7C94000F278AE /* digitalnumbers-regular.ttf */,
+			);
+			path = FontPackages;
+			sourceTree = "<group>";
+		};
+		B09CCD7F27B7CC6800F278AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0CC05D827B65FA800682921 /* ContentView.swift */,
+				B09CCD7D27B7CC6300F278AE /* ButtonView.swift */,
+				B09CCD7127B7BD0600F278AE /* DisplayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B0CC05CA27B65FA800682921 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +86,11 @@
 		B0CC05D527B65FA800682921 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				B09CCD7527B7C04F00F278AE /* Info.plist */,
 				B0CC05D627B65FA800682921 /* CalculatorApp.swift */,
-				B0CC05D827B65FA800682921 /* ContentView.swift */,
+				B09CCD7F27B7CC6800F278AE /* Views */,
+				B09CCD7827B7C64000F278AE /* ButtonEnum.swift */,
+				B09CCD7C27B7C94500F278AE /* FontPackages */,
 				B0CC05DA27B65FA800682921 /* Assets.xcassets */,
 				B0CC05DC27B65FA800682921 /* Preview Content */,
 			);
@@ -127,8 +163,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09CCD8127B7CE7200F278AE /* Montserrat-Bold.ttf in Resources */,
+				B09CCD7727B7C1C700F278AE /* Museo 700.otf in Resources */,
 				B0CC05DE27B65FA800682921 /* Preview Assets.xcassets in Resources */,
 				B0CC05DB27B65FA800682921 /* Assets.xcassets in Resources */,
+				B09CCD7B27B7C94100F278AE /* digitalnumbers-regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +179,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CC05D927B65FA800682921 /* ContentView.swift in Sources */,
+				B09CCD7927B7C64000F278AE /* ButtonEnum.swift in Sources */,
+				B09CCD7E27B7CC6300F278AE /* ButtonView.swift in Sources */,
 				B0CC05D727B65FA800682921 /* CalculatorApp.swift in Sources */,
+				B09CCD7227B7BD0600F278AE /* DisplayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +316,7 @@
 				DEVELOPMENT_TEAM = F4UY8YURNN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calculator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +346,7 @@
 				DEVELOPMENT_TEAM = F4UY8YURNN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Calculator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
