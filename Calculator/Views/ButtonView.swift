@@ -11,20 +11,20 @@ import SwiftUI
 
 
 struct textView: View {
-    var textButton : String
+    var textButton : ButtonValue
     
-    private func getFontSize(textButton : String) -> CGFloat {
-        if textButton == "÷" {
+    private func getFontSize(textButton : ButtonValue) -> CGFloat {
+        if textButton == .divide {
             return 43
-        } else if textButton == "-" {
+        } else if textButton == .subtract {
             return 45
         } else {
             return 29
         }
     }
     
-    private func isOperator(textButton : String) -> Bool {
-        if textButton == "÷" || textButton == "X" || textButton == "-" || textButton == "+" || textButton == "="{
+    private func isOperator(textButton : ButtonValue) -> Bool {
+        if textButton == .divide || textButton == .multiply || textButton == .subtract || textButton == .add || textButton == .equal{
             return true
         } else {
             return false
@@ -32,11 +32,11 @@ struct textView: View {
     }
     
     var body: some View {
-        Text(textButton)
+        Text(textButton.rawValue)
             .font(Font.custom("Montserrat-Bold", size: getFontSize(textButton: textButton)))
             .fontWeight(.bold)
             .foregroundColor(isOperator(textButton: textButton) ? .white : Color(red: 0.228, green: 0.306, blue: 0.538))
-            .frame(width: textButton == "0" ? 176 : 80, height: 80)
+            .frame(width: textButton == .zero ? 176 : 80, height: 80)
             .background(isOperator(textButton: textButton) ? Color(red: 0.227, green: 0.306, blue: 0.537, opacity: 1) : Color(red: 0.945, green: 0.953, blue: 0.965, opacity: 1))
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
@@ -44,111 +44,27 @@ struct textView: View {
 
 
 struct ButtonView: View {
+    let buttons : [[ButtonValue]] = [
+        [.clear, .minus, .percent, .divide],
+        [.seven, .eight, .nine, .multiply],
+        [.four, .five, .six, .subtract],
+        [.one, .two, .three, .add],
+        [.zero, .decimal, .equal]
+    ]
+    
+    @EnvironmentObject var result : CalculatorResult
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack (spacing: 16) {
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "AC")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "+/-")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "%")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "÷")
-                }
-            }
-            HStack (spacing: 16) {
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "7")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "8")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "9")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "X")
-                }
-            }
-            HStack (spacing: 16) {
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "4")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "3")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "2")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "-")
-                }
-            }
-            HStack (spacing: 16) {
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "1")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "2")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "3")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "+")
-                }
-            }
-            HStack (spacing: 16) {
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "0")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: ",")
-                }
-                Button {
-                    //
-                } label: {
-                    textView(textButton: "=")
+            ForEach(buttons, id: \.self) { row in
+                HStack {
+                    ForEach(row, id: \.self) { button in
+                        Button {
+                            result.receiveInput(item: button)
+                        } label: {
+                            textView(textButton: button)
+                        }
+                    }
                 }
             }
         }

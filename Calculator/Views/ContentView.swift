@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var result = "2345"
+    @StateObject var result = CalculatorResult()
     
     var body: some View {
         VStack (alignment: .leading, spacing: 25) {
@@ -21,9 +20,11 @@ struct ContentView: View {
                         .foregroundColor(Color(red: 0.216, green: 0.227, blue: 0.216, opacity: 1))
                         .frame(width: 140, height: 34, alignment: .leading)
                 }
-                DisplayView(result: result)
+                DisplayView()
+                    .environmentObject(result)
             }
             ButtonView()
+                .environmentObject(result)
         }
     }
 }

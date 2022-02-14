@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum buttonValue : String {
+enum ButtonValue : String {
     case zero = "0"
     case one = "1"
     case two = "2"
@@ -22,9 +22,33 @@ enum buttonValue : String {
     case minus = "+/-"
     case percent = "%"
     case divide = "÷"
-    case multiply = "x"
+    case multiply = "X"
     case subtract = "-"
     case add = "+"
     case decimal = ","
     case equal = "="
+}
+
+class CalculatorResult: ObservableObject {
+    @Published var value = "0"
+    
+    func receiveInput(item: ButtonValue) {
+        switch item {
+        case .add, .subtract, .multiply, .divide, .equal:
+            break
+        case .percent, .decimal, .minus:
+            break
+        case .clear:
+            self.value = "0"
+        default:
+            let number = item.rawValue
+            print(number)
+            if self.value == "0" {
+                self.value = number
+            } else {
+                self.value += number
+                print("My value: \(self.value)")
+            }
+        }
+    }
 }
