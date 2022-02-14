@@ -1,7 +1,8 @@
 #  iOS course <iOS для фанатов>
 Calculator for iOS
 
-Template
+Template:
+
 ![iPhone 8 Plus_Calculator](https://user-images.githubusercontent.com/80201768/153814192-f724027b-fdd7-44f7-8086-60ae306dd13e.png)
 
 Template Source:
