@@ -2,7 +2,7 @@
 Calculator for iOS
 
 Template
-![iPhone 8 Plus_Calculator](https://user-images.githubusercontent.com/80201768/153813874-ed02822b-a7a8-4877-b5e4-4086342336b5.png)
+![iPhone 8 Plus_Calculator](https://user-images.githubusercontent.com/80201768/153814192-f724027b-fdd7-44f7-8086-60ae306dd13e.png)
 
 Template Source:
 [Figma-Calculator-iOS-Course](https://www.figma.com/file/7KrGeErvrn9OowBnJeyo3c/Calculator?node-id=1%3A3)
