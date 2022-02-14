@@ -1,6 +1,12 @@
 #  iOS course <iOS для фанатов>
 Calculator for iOS
 
+Template
+![iPhone 8 Plus_Calculator](https://user-images.githubusercontent.com/80201768/153813874-ed02822b-a7a8-4877-b5e4-4086342336b5.png)
+
+Template Source:
+[Figma-Calculator-iOS-Course](https://www.figma.com/file/7KrGeErvrn9OowBnJeyo3c/Calculator?node-id=1%3A3)
+
 ##  To-do list:
 1. Create calculator's layout. ✅
 2. Add number button's functionality. (Using StateObject, EnvironmentObject, and ObservableObject) ✅
