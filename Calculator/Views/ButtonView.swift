@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 struct textView: View {
     var textButton : ButtonValue
     
@@ -52,7 +49,7 @@ struct ButtonView: View {
         [.zero, .decimal, .equal]
     ]
     
-    @EnvironmentObject var result : CalculatorResult
+    @EnvironmentObject var result : CalculatorCalculation
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {

@@ -11,7 +11,19 @@ struct DisplayView: View {
     static let gradientStart = Color(red: 0.792, green: 0.831, blue: 0.773, opacity: 1)
     static let gradientEnd = Color(red: 0.699, green: 0.749, blue: 0.647, opacity: 1)
     
-    @EnvironmentObject var result : CalculatorResult
+    @EnvironmentObject var result : CalculatorCalculation
+    
+    func getShadowDisplay (isDecimal: Bool, decimalVal: String) -> String {
+        if isDecimal {
+            let decArr = decimalVal.components(separatedBy: ".")
+            let index = decArr[0].count
+            var displayText = "8888888888"
+            displayText.insert(".", at: displayText.index(displayText.startIndex, offsetBy: index))
+            return displayText
+        } else {
+            return "8888888888"
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .center) {
@@ -24,7 +36,7 @@ struct DisplayView: View {
                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 9, x: 0, y: 0)
                 .frame(width: 366, height: 100)
             ZStack(alignment: .leading) {
-                Text("8888888888")
+                Text(getShadowDisplay(isDecimal: result.isDecimal, decimalVal: result.value))
                     .font(Font.custom("digitalnumbers-regular", size: 40))
                     .foregroundColor(Color(red: 0.216, green: 0.227, blue: 0.216, opacity: 0.17))
                 Text(result.value)
@@ -38,6 +50,6 @@ struct DisplayView: View {
 struct DisplayView_Previews: PreviewProvider {
     static var previews: some View {
         DisplayView()
-            .environmentObject(CalculatorResult())
+            .environmentObject(CalculatorCalculation())
     }
 }

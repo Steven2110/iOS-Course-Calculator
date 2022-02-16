@@ -8,18 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var result = CalculatorResult()
+    @StateObject var result = CalculatorCalculation()
     
     var body: some View {
         VStack (alignment: .leading, spacing: 25) {
             VStack (alignment: .leading, spacing: 24) {
-                HStack(spacing: 24) {
-                    Text("Calculator")
-                        .fontWeight(.medium)
-                        .font(Font.custom("Museo 700", size: 28))
-                        .foregroundColor(Color(red: 0.216, green: 0.227, blue: 0.216, opacity: 1))
-                        .frame(width: 140, height: 34, alignment: .leading)
-                }
+                TitleView()
                 DisplayView()
                     .environmentObject(result)
             }
