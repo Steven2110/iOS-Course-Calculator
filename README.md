@@ -14,4 +14,3 @@ Template Source:
 3. Add clear button's functionality. ✅ 
 4. Add decimal button's functionality. ✅
 5. Add operation button's functionality. (Add, Subtract, Divide, Multiply, Equal, Plus minus, Percent) ✅
-6. Add geometry reader for 
