@@ -7,33 +7,7 @@
 
 import Foundation
 
-enum ButtonValue : String {
-    case zero = "0"
-    case one = "1"
-    case two = "2"
-    case three = "3"
-    case four = "4"
-    case five = "5"
-    case six = "6"
-    case seven = "7"
-    case eight = "8"
-    case nine = "9"
-    case clear = "AC"
-    case minus = "+/-"
-    case percent = "%"
-    case divide = "÷"
-    case multiply = "X"
-    case subtract = "-"
-    case add = "+"
-    case decimal = ","
-    case equal = "="
-}
-
-enum Operation {
-    case add, subtract, multiply, divide, none
-}
-
-class CalculatorCalculation: ObservableObject {
+final class CalculatorCalculation: ObservableObject {
     @Published var firstNumber = "0"
     @Published var value = "0"
     var currentOperator: Operation = .none
@@ -43,7 +17,7 @@ class CalculatorCalculation: ObservableObject {
     func getFinalResult(decimal: Double) -> String {
         let decimalInString = String(decimal)
         let decArr = decimalInString.components(separatedBy: ".")
-        let len = 10 - Double(decArr[0].count)
+        let len = 10 - Double(decArr[0].count)                  // To make it dynamic size of floating point
         let result = round(decimal * pow(10, len))/pow(10, len) //To fix error like 0.1+0.2 = 0.30000000004
         if (floor(result) == result) {
             self.isDecimal = false

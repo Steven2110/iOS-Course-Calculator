@@ -13,18 +13,6 @@ struct DisplayView: View {
     
     @EnvironmentObject var result : CalculatorCalculation
     
-    func getShadowDisplay (isDecimal: Bool, decimalVal: String) -> String {
-        if isDecimal {
-            let decArr = decimalVal.components(separatedBy: ".")
-            let index = decArr[0].count
-            var displayText = "8888888888"
-            displayText.insert(".", at: displayText.index(displayText.startIndex, offsetBy: index))
-            return displayText
-        } else {
-            return "8888888888"
-        }
-    }
-    
     var body: some View {
         ZStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 10)
@@ -43,6 +31,18 @@ struct DisplayView: View {
                     .font(Font.custom("digitalnumbers-regular", size: 40))
                     .foregroundColor(Color(red: 0.216, green: 0.227, blue: 0.216))
             }
+        }
+    }
+    
+    private func getShadowDisplay (isDecimal: Bool, decimalVal: String) -> String {
+        if isDecimal {
+            let decArr = decimalVal.components(separatedBy: ".")
+            let index = decArr[0].count
+            var displayText = "8888888888"
+            displayText.insert(".", at: displayText.index(displayText.startIndex, offsetBy: index))
+            return displayText
+        } else {
+            return "8888888888"
         }
     }
 }
