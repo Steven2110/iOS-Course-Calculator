@@ -10,13 +10,13 @@ import Foundation
 final class CalculatorCalculation: ObservableObject {
     @Published var firstNumber = "0"
     @Published var value = "0"
-    var currentOperator: Operation = .none
+    var currentOperator: ButtonValue = .none
     
     @Published var isDecimal: Bool = false
     
     func getFinalResult(decimal: Double) -> String {
         let formatter = NumberFormatter()
-        let result = round(decimal * pow(10, 10))/pow(10, 10)   //To fix error like 0.1+0.2 = 0.30000000004
+        let result = round(decimal * pow(10, 9))/pow(10, 9)     //To fix error like 0.1+0.2 = 0.30000000004
         
         formatter.usesSignificantDigits = true
         formatter.maximumSignificantDigits = 10                 // To make it dynamic size of floating point
@@ -32,39 +32,26 @@ final class CalculatorCalculation: ObservableObject {
     
     func receiveInput(item: ButtonValue) {
         switch item {
-        case .add, .subtract, .multiply, .divide, .equal:
-            if item == .add {
-                self.firstNumber = self.value
-                self.currentOperator = .add
-            } else if item == .subtract {
-                self.firstNumber = self.value
-                self.currentOperator = .subtract
-            } else if item == .multiply {
-                self.firstNumber = self.value
-                self.currentOperator = .multiply
-            } else if item == .divide {
-                self.firstNumber = self.value
-                self.currentOperator = .divide
-            } else if item == .equal {
-                switch self.currentOperator {
-                case .add:
-                    let result = Double(self.firstNumber)! + Double(self.value)!
-                    self.value = getFinalResult(decimal: result)
-                case .subtract:
-                    let result = Double(self.firstNumber)! - Double(self.value)!
-                    self.value = getFinalResult(decimal: result)
-                case .multiply:
-                    let result = Double(self.firstNumber)! * Double(self.value)!
-                    self.value = getFinalResult(decimal: result)
-                case .divide:
-                    let result = Double(self.firstNumber)! / Double(self.value)!
-                    self.value = getFinalResult(decimal: result)
-                default:
-                    break
-                }
-            }
-            if item != .equal {
-                self.value = "0"
+        case .add, .subtract, .multiply, .divide:
+            self.firstNumber = self.value
+            self.currentOperator = item
+            self.value = "0"
+        case .equal:
+            switch self.currentOperator {
+            case .add:
+                let result = Double(self.firstNumber)! + Double(self.value)!
+                self.value = getFinalResult(decimal: result)
+            case .subtract:
+                let result = Double(self.firstNumber)! - Double(self.value)!
+                self.value = getFinalResult(decimal: result)
+            case .multiply:
+                let result = Double(self.firstNumber)! * Double(self.value)!
+                self.value = getFinalResult(decimal: result)
+            case .divide:
+                let result = Double(self.firstNumber)! / Double(self.value)!
+                self.value = getFinalResult(decimal: result)
+            default:
+                break
             }
         case .decimal:
             self.value += "."

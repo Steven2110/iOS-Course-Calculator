@@ -27,6 +27,7 @@ enum ButtonValue : String {
     case add = "+"
     case decimal = ","
     case equal = "="
+    case none
 }
 
 enum Operation {
