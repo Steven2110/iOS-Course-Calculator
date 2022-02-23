@@ -11,12 +11,12 @@ struct ContentView: View {
     @StateObject var result = CalculatorCalculation()
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 25) {
-            VStack (alignment: .leading, spacing: 24) {
-                TitleView()
-                DisplayView()
-                    .environmentObject(result)
-            }
+        VStack (alignment: .leading, spacing: 0) {
+            TitleView()
+                .padding(.bottom, 24)
+            DisplayView()
+                .environmentObject(result)
+                .padding(.bottom, 25)
             ButtonView()
                 .environmentObject(result)
         }
