@@ -29,11 +29,8 @@ struct ButtonTextView: View {
     }
     
     private func isOperator(textButton : ButtonValue) -> Bool {
-        if textButton == .divide || textButton == .multiply || textButton == .subtract || textButton == .add || textButton == .equal{
-            return true
-        } else {
-            return false
-        }
+        let operators: [ButtonValue] = [.add, .multiply, .subtract, .divide, .equal]
+        return operators.contains(textButton)
     }
     
     var body: some View {
