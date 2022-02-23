@@ -15,16 +15,18 @@ final class CalculatorCalculation: ObservableObject {
     @Published var isDecimal: Bool = false
     
     func getFinalResult(decimal: Double) -> String {
-        let decimalInString = String(decimal)
-        let decArr = decimalInString.components(separatedBy: ".")
-        let len = 10 - Double(decArr[0].count)                  // To make it dynamic size of floating point
-        let result = round(decimal * pow(10, len))/pow(10, len) //To fix error like 0.1+0.2 = 0.30000000004
+        let formatter = NumberFormatter()
+        let result = round(decimal * pow(10, 10))/pow(10, 10)   //To fix error like 0.1+0.2 = 0.30000000004
+        
+        formatter.usesSignificantDigits = true
+        formatter.maximumSignificantDigits = 10                 // To make it dynamic size of floating point
+        
         if (floor(result) == result) {
             self.isDecimal = false
             return String(Int(result))
         } else {
             self.isDecimal = true
-            return String(result)
+            return formatter.string(from: NSNumber(value: result))!
         }
     }
     
