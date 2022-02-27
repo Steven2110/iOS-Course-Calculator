@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ButtonTextView: View {
     var textButton : ButtonValue
+    private let shadowColor1 = Color(red: 0.216, green: 0.329, blue: 0.667, opacity: 0.1)
+    private let shadowColor2 = Color(red: 1, green: 1, blue: 1, opacity: 1)
     
     private func getFontSize(textButton : ButtonValue) -> CGFloat {
         if textButton == .divide {
@@ -41,6 +43,8 @@ struct ButtonTextView: View {
             .frame(width: self.getWidth(item: textButton), height: self.getHeight())
             .background(getButtonBackgroundColor(button: textButton))
             .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: shadowColor1, radius: 10, x: 5, y: 5)
+            .shadow(color: shadowColor2, radius: 10, x: -5, y: -5)
     }
     private func getWidth(item: ButtonValue) -> CGFloat {
         let width : CGFloat = (UIScreen.main.bounds.width - (3 * 16) - (24 + 22)) / 4

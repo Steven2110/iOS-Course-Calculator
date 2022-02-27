@@ -11,14 +11,18 @@ struct ContentView: View {
     @StateObject var result = CalculationModel()
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 0) {
-            TitleView()
-                .padding(.bottom, 24)
-            DisplayView()
-                .environmentObject(result)
-                .padding(.bottom, 25)
-            ButtonView()
-                .environmentObject(result)
+        ZStack {
+            Color(red: 0.945, green: 0.953, blue: 0.965, opacity: 1)
+                .ignoresSafeArea()
+            VStack (alignment: .leading, spacing: 0) {
+                TitleView()
+                    .padding(.bottom, 24)
+                DisplayView()
+                    .environmentObject(result)
+                    .padding(.bottom, 25)
+                ButtonView()
+                    .environmentObject(result)
+            }
         }
     }
 }
