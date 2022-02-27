@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CalculatorCalculation: ObservableObject {
+final class CalculationModel: ObservableObject {
     @Published var firstNumber = "0"
     @Published var value = "0"
     var currentOperator: ButtonValue = .none
@@ -48,8 +48,12 @@ final class CalculatorCalculation: ObservableObject {
                 let result = Double(self.firstNumber)! * Double(self.value)!
                 self.value = getFinalResult(decimal: result)
             case .divide:
-                let result = Double(self.firstNumber)! / Double(self.value)!
-                self.value = getFinalResult(decimal: result)
+                if self.value == "0" {
+                    self.value = "Error"
+                } else {
+                    let result = Double(self.firstNumber)! / Double(self.value)!
+                    self.value = getFinalResult(decimal: result)
+                }
             default:
                 break
             }

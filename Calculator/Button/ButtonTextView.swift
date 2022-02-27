@@ -38,9 +38,19 @@ struct ButtonTextView: View {
             .font(Font.custom("Montserrat-Bold", size: getFontSize(textButton: textButton)))
             .fontWeight(.bold)
             .foregroundColor(isOperator(textButton: textButton) ? .white : Color(red: 0.228, green: 0.306, blue: 0.538))
-            .frame(width: textButton == .zero ? 176 : 80, height: 80)
+            .frame(width: self.getWidth(item: textButton), height: self.getHeight())
             .background(getButtonBackgroundColor(button: textButton))
             .clipShape(RoundedRectangle(cornerRadius: 20))
+    }
+    private func getWidth(item: ButtonValue) -> CGFloat {
+        let width : CGFloat = (UIScreen.main.bounds.width - (3 * 16) - (24 + 22)) / 4
+        if item == .zero {
+            return width * 2 + 16
+        }
+        return width
+    }
+    private func getHeight() -> CGFloat {
+        return (UIScreen.main.bounds.height - (4 * 16) - (208 + 64)) / 5
     }
 }
 

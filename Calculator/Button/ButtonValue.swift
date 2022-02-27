@@ -29,7 +29,3 @@ enum ButtonValue : String {
     case equal = "="
     case none
 }
-
-enum Operation {
-    case add, subtract, multiply, divide, none
-}

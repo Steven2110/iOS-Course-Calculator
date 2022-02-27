@@ -17,7 +17,7 @@ struct ButtonView: View {
         [.zero, .decimal, .equal]
     ]
     
-    @EnvironmentObject var result : CalculatorCalculation
+    @EnvironmentObject var result : CalculationModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: self.buttonSpacing) {
@@ -39,6 +39,6 @@ struct ButtonView: View {
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
         ButtonView()
-            .environmentObject(CalculatorCalculation())
+            .environmentObject(CalculationModel())
     }
 }

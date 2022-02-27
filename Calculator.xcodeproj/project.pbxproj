@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B00B02A727BEA44C00A7AA2D /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00B02A627BEA44C00A7AA2D /* ButtonType.swift */; };
+		B00B02A727BEA44C00A7AA2D /* ButtonValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00B02A627BEA44C00A7AA2D /* ButtonValue.swift */; };
 		B00B02A927BEA95C00A7AA2D /* ButtonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00B02A827BEA95C00A7AA2D /* ButtonTextView.swift */; };
 		B034C6A327BBC1A900C69655 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B034C6A227BBC1A900C69655 /* TitleView.swift */; };
 		B09CCD7227B7BD0600F278AE /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7127B7BD0600F278AE /* DisplayView.swift */; };
 		B09CCD7727B7C1C700F278AE /* Museo 700.otf in Resources */ = {isa = PBXBuildFile; fileRef = B09CCD7627B7C1C700F278AE /* Museo 700.otf */; };
-		B09CCD7927B7C64000F278AE /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7827B7C64000F278AE /* ButtonModel.swift */; };
+		B09CCD7927B7C64000F278AE /* CalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7827B7C64000F278AE /* CalculationModel.swift */; };
 		B09CCD7B27B7C94100F278AE /* digitalnumbers-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B09CCD7A27B7C94000F278AE /* digitalnumbers-regular.ttf */; };
 		B09CCD7E27B7CC6300F278AE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CCD7D27B7CC6300F278AE /* ButtonView.swift */; };
 		B09CCD8127B7CE7200F278AE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B09CCD8027B7CE7200F278AE /* Montserrat-Bold.ttf */; };
@@ -23,13 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B00B02A627BEA44C00A7AA2D /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		B00B02A627BEA44C00A7AA2D /* ButtonValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonValue.swift; sourceTree = "<group>"; };
 		B00B02A827BEA95C00A7AA2D /* ButtonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTextView.swift; sourceTree = "<group>"; };
 		B034C6A227BBC1A900C69655 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		B09CCD7127B7BD0600F278AE /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		B09CCD7527B7C04F00F278AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B09CCD7627B7C1C700F278AE /* Museo 700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo 700.otf"; sourceTree = "<group>"; };
-		B09CCD7827B7C64000F278AE /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
+		B09CCD7827B7C64000F278AE /* CalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationModel.swift; sourceTree = "<group>"; };
 		B09CCD7A27B7C94000F278AE /* digitalnumbers-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digitalnumbers-regular.ttf"; sourceTree = "<group>"; };
 		B09CCD7D27B7CC6300F278AE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		B09CCD8027B7CE7200F278AE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		B00B02A527BEA40E00A7AA2D /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				B00B02A627BEA44C00A7AA2D /* ButtonType.swift */,
+				B00B02A627BEA44C00A7AA2D /* ButtonValue.swift */,
 				B00B02A827BEA95C00A7AA2D /* ButtonTextView.swift */,
 			);
 			path = Button;
@@ -125,7 +125,7 @@
 		B0D73B2527BD744D0022D673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B09CCD7827B7C64000F278AE /* ButtonModel.swift */,
+				B09CCD7827B7C64000F278AE /* CalculationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,8 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CC05D927B65FA800682921 /* ContentView.swift in Sources */,
-				B00B02A727BEA44C00A7AA2D /* ButtonType.swift in Sources */,
-				B09CCD7927B7C64000F278AE /* ButtonModel.swift in Sources */,
+				B00B02A727BEA44C00A7AA2D /* ButtonValue.swift in Sources */,
+				B09CCD7927B7C64000F278AE /* CalculationModel.swift in Sources */,
 				B00B02A927BEA95C00A7AA2D /* ButtonTextView.swift in Sources */,
 				B09CCD7E27B7CC6300F278AE /* ButtonView.swift in Sources */,
 				B0CC05D727B65FA800682921 /* CalculatorApp.swift in Sources */,
